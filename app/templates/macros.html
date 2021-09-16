@@ -1,0 +1,26 @@
+{% macro displayNews(current_news_list) %} {% for current_news in
+    current_news_list %}
+    <div class="col-md-4">
+      <div
+        class="card"
+        style="
+          box-sizing: border-box;
+          border: rgb(125, 156, 185) solid;
+          padding: 2px;
+          border-radius: 3%;
+          margin: 5px;
+          background-color: beige;
+        "
+      >
+        <div class="card-body">
+            <a href="/news/{{current_news.id}}" class="text-decoration-none">
+                <h3 style="color: rgb(228, 8, 248); font-family: sans-serif"class="card-title text-center">{{ current_news.name}}</h3>
+            </a>
+          <p style="font-size: large; font-family: 'Open Sans', sans-serif" class="card-text">
+            {{current_news.url}}
+          </p>
+          <a href="/news/{{current_news.id}}" class="btn btn-primary">Articles</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% endmacro %}

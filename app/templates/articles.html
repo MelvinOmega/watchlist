@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% for current_news in articles %}
+<div class="container">
+    <div class="row g-2">
+        <p>{{ current_news.author}}</p>
+        <p>{{current_news.title}}</p>
+        <a target="_blank" href="{{ current_news.url}}">
+            <p>{{ current_news.description}}</p>
+        </a>
+        <div class="jumbotron">
+            <img class="img-responsive" src="{{current_news.urlToImage}}" width="400" height="350" alt="images">
+        </div>
+        <p>{{ current_news.publishedAt}}</p>
+        <p>{{ current_news.content}}</p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
